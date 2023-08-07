@@ -102,6 +102,7 @@ class DataTransformation:
             
 
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
+            #np.c- concatenet
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
             save_object(
