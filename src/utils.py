@@ -1,6 +1,6 @@
 import os
 import sys
-import pickle
+import pickle 
 import numpy as np 
 import pandas as pd
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
@@ -45,4 +45,11 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
         logging.info('Exception occured during model training')
         raise CustomException(e,sys)
     
-    
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:#wb read write byte,open fun in python
+           return pickle.load(file_obj)
+
+    except Exception as e:
+        logging.info("Exception occured during load_object function utils")
+        raise CustomException(e, sys)
